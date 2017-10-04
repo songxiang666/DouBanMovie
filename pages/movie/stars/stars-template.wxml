@@ -1,0 +1,11 @@
+<template name="stars">
+  <view class="stars-container">
+    <view class="stars">
+      <block wx:for="{{stars}}" wx:for-item="i">
+         <image wx:if="{{i}}" src="/pages/images/icon/star.png"></image>
+          <image wx:else src="/pages/images/icon/none-star.png"></image>
+      </block>
+    </view>
+    <text class="stars-score">{{average}}</text>
+  </view>
+</template>

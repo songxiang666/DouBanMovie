@@ -1,0 +1,9 @@
+@import "/pages/movie/movies/movies-template.wxss";
+.single-view-contanier{
+  float: left;
+  margin-bottom: 40rpx;
+}
+.grid-view{
+  /*要触发滚动函数就必须给scroll-view设置一个高度*/
+  margin:40rpx 0 40rpx 6rpx;
+}

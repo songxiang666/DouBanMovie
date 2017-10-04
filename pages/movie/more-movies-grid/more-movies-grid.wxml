@@ -1,0 +1,10 @@
+<import src="../movies/movies-template.wxml" />
+<template name="moreMoviesGrid">                                                              <!--这里设置lower-threshold为很小的值 就能防止上滑一次就触发多次加载  尽量不要设置为0-->
+<view class="grid-view">
+  <block wx:for="{{movies}}" wx:for-item="movie">
+      <view class="single-view-contanier">
+        <template  is="movies" data="{{...movie}}"></template>
+      </view>
+  </block>
+</view>
+</template>

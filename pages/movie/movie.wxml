@@ -1,0 +1,24 @@
+<import src="/pages/movie/movies-list/movies-list-template.wxml"/>
+<import src="/pages/movie/more-movies-grid/more-movies-grid.wxml"/>
+<view class="search">
+  <icon type="search" class="serach-img" size="13" color="#405f80"/>
+  <input  type="text" placeholder="绣春刀、花样少年" placeholder-class="placehohlder" bindfocus="onBindFocus" bindconfirm="onBindChange"/>
+  <image src="/pages/images/icon/xx.png" class="cancelImg" catchtap="oncancel" wx:if="{{searchContainer}}"></image>
+</view>
+<view class="container" wx:if="{{container}}">
+  <view class="movies-template">
+    <template class="movies-template" is="movies-list" data="{{...inTheater}}"/>
+  </view>
+  <view class="movies-template">
+    <template class="movies-template" is="movies-list" data="{{...comingSoon}}"/>
+  </view>
+  <view class="movies-template">
+    <template class="movies-template" is="movies-list" data="{{...top250Url}}"/>
+  </view>
+</view>
+
+<view class="searchContainer" wx:if="{{searchContainer}}">
+  <scroll-view class="scroll-View" scroll-y="{{true}}" scroll-x="{{false}}" lower-threshold="1" bindscrolltolower="onScrollBottom"	>
+    <template  is="moreMoviesGrid" data="{{...searchResult}}"></template>
+  </scroll-view>
+</view>
